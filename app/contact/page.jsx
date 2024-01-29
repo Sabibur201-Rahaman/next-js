@@ -1,15 +1,17 @@
-async function getData(){
-    let res=await fetch('https://dummyjson.com/products')
-    let json=await res.json()
-    console.log(json)
-    return json['products']
+'use client'
+async function getData() {
+  let res = await fetch("https://dummyjson.com/products");
+  let json = await res.json();
+  console.log(json);
+  return json["products"];
 }
 
-
 async function page() {
-  let data= await getData()
+  let data = await getData();
   return (
     <div>
+      <button onClick={()=>{alert("Hello")}}>click</button>
+
       {data.map((item, index) => {
         return (
           <div key={index}>
