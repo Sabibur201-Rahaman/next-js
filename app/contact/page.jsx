@@ -1,4 +1,7 @@
 'use client'
+
+import Menu from "../components/Menu";
+
 async function getData() {
   let res = await fetch("https://dummyjson.com/products");
   let json = await res.json();
@@ -11,7 +14,7 @@ async function page() {
   return (
     <div>
       <button onClick={()=>{alert("Hello")}}>click</button>
-
+    <Menu/>
       {data.map((item, index) => {
         return (
           <div key={index}>
